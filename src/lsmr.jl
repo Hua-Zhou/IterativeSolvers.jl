@@ -201,7 +201,7 @@ function lsmr_method!(log::ConvergenceHistory, x, A, b, v, h, hbar;
 
             # Update h, h_hat, x.
             hbar .= hbar .* (-θbar * ρ / (ρold * ρbarold)) .+ h
-            x .+= (ζ / (ρ * ρbar)) * hbar
+            x .+= (ζ / (ρ * ρbar)) .* hbar
             h .= h .* (-θnew / ρ) .+ v
 
             ##############################################################################
